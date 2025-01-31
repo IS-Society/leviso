@@ -1,0 +1,69 @@
+<odoo>
+    <!-- Tree View -->
+    <record id="view_addoncustome_book_tree" model="ir.ui.view">
+        <field name="name">addoncustome.book.tree</field>
+        <field name="model">addoncustome.book</field>
+        <field name="arch" type="xml">
+            <tree string="Buku Kita">
+                <field name="name" />
+                <field name="author" />
+                <field name="price" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_addoncustome_book_form" model="ir.ui.view">
+        <field name="name">addoncustome.book.form</field>
+        <field name="model">addoncustome.book</field>
+        <field name="arch" type="xml">
+            <form string="Custom Module Product">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="author" />
+                        <field name="price" />
+                    </group>
+                    <!-- <notebook>
+                        <page string="Deskripsi">
+                            <field name="description" />
+                        </page>
+                        <page string="Catatan">
+                            <field name="notes" />
+                        </page>
+                        <page string="Log Pemeliharaan">
+                            <field name="maintenance_log_ids">
+                                <tree>
+                                    <field name="maintenance_date" />
+                                    <field name="maintenance_by" />
+                                    <field name="notes" />
+                                </tree>
+                                <form>
+                                    <group>
+                                        <field name="maintenance_date" />
+                                        <field name="maintenance_by" />
+                                        <field name="notes" />
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook> -->
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="addoncustome_book_action" model="ir.actions.act_window">
+        <field name="name">Custom Module Products</field>
+        <field name="res_model">addoncustome.book</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_addoncustome_book_tree" />
+    </record>
+
+    <!-- Menu dan Action -->
+    <menuitem id="addoncustome_management_menu" name="Custom Module Management" sequence="1" />
+    <menuitem id="addoncustome_book_menu" name="Products"
+        action="addoncustome_book_action" />
+
+</odoo>

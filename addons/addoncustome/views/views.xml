@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="addoncustome.list">
+      <field name="name">addoncustome list</field>
+      <field name="model">addoncustome.addoncustome</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="addoncustome.action_window">
+      <field name="name">addoncustome window</field>
+      <field name="res_model">addoncustome.addoncustome</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="addoncustome.action_server">
+      <field name="name">addoncustome server</field>
+      <field name="model_id" ref="model_addoncustome_addoncustome"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="addoncustome" id="addoncustome.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="addoncustome.menu_1" parent="addoncustome.menu_root"/>
+    <menuitem name="Menu 2" id="addoncustome.menu_2" parent="addoncustome.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="addoncustome.menu_1_list" parent="addoncustome.menu_1"
+              action="addoncustome.action_window"/>
+    <menuitem name="Server to list" id="addoncustome" parent="addoncustome.menu_2"
+              action="addoncustome.action_server"/>
+-->
+  </data>
+</odoo>
